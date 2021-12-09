@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+    background-color: blanchedalmond;
+    position: relative;
+}
+
+
+/*https://stackoverflow.com/questions/27123399/how-to-move-an-image-up-and-down-smoothly-with-css*/
+img#eightBall{
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+#eightBallShadow {
+    position: relative;
+    bottom: 50px;
+    margin-bottom: -80px;
+
+}
+
+h2 {
+    font-family: 'Inconsolata', monospace;
+}
+
+h3 {
+    font-family: 'Inconsolata', monospace;
+}
+
+
