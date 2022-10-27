@@ -1,12 +1,13 @@
 body {
     text-align: center;
-    background-color: blanchedalmond;
+    background-color: #0c0032;
     position: relative;
 }
 
 
 /*https://stackoverflow.com/questions/27123399/how-to-move-an-image-up-and-down-smoothly-with-css*/
 img#eightBall{
+    animation: fall;
     -webkit-animation: mover 2s infinite  alternate;
     animation: mover 2s infinite  alternate;
 }
@@ -26,12 +27,176 @@ img#eightBall{
 
 }
 
-h2 {
-    font-family: 'Inconsolata', monospace;
+h1 {
+	font-family: 'Raleway', sans-serif;
+	color: white;
 }
 
-h3 {
-    font-family: 'Inconsolata', monospace;
+h2, h3 {
+    font-family: 'Raleway', sans-serif;
+	color: white;
 }
 
 
+#qResponse {
+    animation-duration: 1s;
+    animation-name: jump;
+}
+
+/* Animation fade-in for 8Ball response*/
+#message {
+	position: fixed;
+	opacity: 0;
+	transition: 2s;
+}
+
+#message.visible {
+	opacity: 1;
+	transition: 1s;
+}
+
+#waitingForQuestion {
+	opacity: 0;
+	transition: .5s;
+}
+
+#waitingForQuestion.visible {
+	opacity: 1;
+	transition-delay: 2s;
+	transition: 7s;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/* Waiting for response animation '...' text
+https://cssload.net/en/animated-text */
+#fountainTextG{
+	width:390px;
+	margin:auto;
+}
+
+.fountainTextG{
+	color:rgb(0,0,0);
+	font-family:Arial;
+	font-size:41px;
+	text-decoration:none;
+	font-weight:normal;
+	font-style:normal;
+	float:left;
+	animation-name:bounce_fountainTextG;
+		-o-animation-name:bounce_fountainTextG;
+		-ms-animation-name:bounce_fountainTextG;
+		-webkit-animation-name:bounce_fountainTextG;
+		-moz-animation-name:bounce_fountainTextG;
+	animation-duration:3s;
+		-o-animation-duration:3s;
+		-ms-animation-duration:3s;
+		-webkit-animation-duration:3s;
+		-moz-animation-duration:3s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
+	transform:scale(.5);
+		-o-transform:scale(.5);
+		-ms-transform:scale(.5);
+		-webkit-transform:scale(.5);
+		-moz-transform:scale(.5);
+}#fountainTextG_1{
+	animation-delay:0.2925s;
+		-o-animation-delay:0.2925s;
+		-ms-animation-delay:0.2925s;
+		-webkit-animation-delay:0.2925s;
+		-moz-animation-delay:0.2925s;
+}
+#fountainTextG_2{
+	animation-delay:0.749s;
+		-o-animation-delay:0.749s;
+		-ms-animation-delay:0.749s;
+		-webkit-animation-delay:0.749s;
+		-moz-animation-delay:0.749s;
+}
+#fountainTextG_3{
+	animation-delay:1.2055s;
+		-o-animation-delay:1.2055s;
+		-ms-animation-delay:1.2055s;
+		-webkit-animation-delay:1.2055s;
+		-moz-animation-delay:1.2055s;
+}
+
+
+
+
+@keyframes bounce_fountainTextG{
+	0%{
+		transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-o-keyframes bounce_fountainTextG{
+	0%{
+		-o-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-o-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-ms-keyframes bounce_fountainTextG{
+	0%{
+		-ms-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-ms-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-webkit-keyframes bounce_fountainTextG{
+	0%{
+		-webkit-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-webkit-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-moz-keyframes bounce_fountainTextG{
+	0%{
+		-moz-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-moz-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}

@@ -11,21 +11,36 @@ const eightBallResponses =
 const submitButton = document.getElementById('submitButton');
 const userInput = document.getElementById('userSubmit')
 
+const loading = document.getElementById('waitingForQuestion');
+const message = document.getElementById('message');
 
+
+function toggleMessage() {
+    loading.classList.remove("visible");
+    message.classList.add("visible");
+}
+
+// User submits question
 submitButton.onclick = () => {
     if (userInput.value.includes("?")) {
+        toggleMessage();
         response();
     } else {
-        document.getElementById('qResponse').innerHTML = "I don't know what you're trying to ask...\nPerhaps add a question mark [?]"
+        toggleMessage();
+        message.innerHTML = "I don't know what you're trying to ask...\nPerhaps add a question mark [?]"
     }
     
 }
+
+// User clicks on input bar
 userInput.onfocus = () => { 
-    document.getElementById('qResponse').innerHTML = '...';
+    loading.classList.add('visible');
+    message.classList.remove("visible");
 }
 
+
 function response() {
-    document.getElementById('qResponse').innerHTML = eightBallResponses[Math.floor(Math.random() * eightBallResponses.length)];
+    message.innerHTML = eightBallResponses[Math.floor(Math.random() * eightBallResponses.length)];
 }
 
 
